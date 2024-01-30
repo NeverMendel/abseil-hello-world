@@ -12,8 +12,8 @@ RUN apt update && apt install -y \
 # Install Bazel
 RUN BAZEL_VERSION=6.3.0 && \
     BAZEL_ARCH=$(arch | sed s/aarch64/arm64/) && \
-    wget -O /bin/bazel https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-linux-${BAZEL_ARCH}
-RUN chmod +x /bin/bazel
+    wget -O /bin/bazel https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-linux-${BAZEL_ARCH} && \
+    chmod +x /bin/bazel
 
 # Install Buildifier
 RUN BUILDIFIER_VERSION=v6.1.2 && \
